@@ -158,3 +158,43 @@ body {
     text-shadow: 0 0 6px black;
 }
 
+  .article {
+    font-family: "Poetsen One", sans-serif;
+    margin: 40px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .info, .form {
+    width: 45%;
+  }
+
+  .info h3, .form h3 {
+    font-weight: "Poetsen One";
+  }
+
+  .info p {
+    margin: 5px 0;
+  }
+
+  .social-icons a {
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .form input, .form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  .form button {
+    padding: 10px 20px;
+  }
