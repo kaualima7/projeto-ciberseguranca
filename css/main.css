@@ -30,40 +30,41 @@ nav {
   background-color: var(--cor-navbar); 
   top: 0;
   z-index: 10;
-  padding: 20px 0;
+  padding: 5px 0;
 }
 
 .degrade-apos-nav {
-  height: 60px;
+  height: 25px;
   background: linear-gradient(to bottom, var(--cor-navbar), var(--cor-fundo));
 }
 
 .menu {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 20px 0;
-  margin: 0;
-  gap: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+    padding: 20px 0;
+    margin: 0;
 }
 
 .menu a {
-  text-decoration: none;
-  color: #000000; 
-  font-weight: bold;
-  transition: color 0.3s, text-shadow 0.3s;
-  text-shadow: 0 0 3px rgba(255, 255, 255, 0.3); 
+    text-decoration: none;
+    color: #000000; 
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.3); 
 }
 
 
 .item_ativo a {
-  color: var(--cor-destaque);
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5); 
+    color: var(--cor-destaque);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.5); 
 }
 
 .item_padrao a:hover {
-  color: #333333; 
-  text-shadow: none;
+    color: #333333; 
+    text-shadow: none;
 }
 
 .tituloCartilha {
@@ -77,9 +78,9 @@ nav {
 }
 
 .tituloPrincipal {
-  text-align: center;
-  padding: 60px 20px 30px;
-  background: none;
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: none;
 }
 
 .tituloArticle {
@@ -87,27 +88,27 @@ nav {
 }
 
 main {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
 }
 
 .cartilha article {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .cartilha h2 {
-  color: var(--cor-destaque);
-  border-bottom: 2px solid var(--cor-destaque-2);
-  padding-bottom: 5px;
+    color: var(--cor-destaque);
+    border-bottom: 2px solid var(--cor-destaque-2);
+    padding-bottom: 5px;
 }
 
 .cartilha ul {
-  padding-left: 20px;
+    padding-left: 20px;
 }
 
 .cartilha li {
-  margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 footer {
@@ -133,6 +134,14 @@ body {
     transform: translateY(-20px);
     animation: slideDown 0.6s forwards;
     transition: font-size 0.4s ease, text-shadow 0.4s ease;
+}
+
+.item_ativo {
+  margin-top: 8px;
+}
+
+.item_padrao {
+  margin-top: 3px;
 }
 
 
