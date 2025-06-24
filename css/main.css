@@ -28,14 +28,15 @@ body {
 }
 
 nav {
+    position: relative;
     background-color: var(--cor-navbar); 
     top: 0;
     z-index: 10;
-    padding: 5px 0;
+    padding: 0px 0;
 }
 
 .degrade-apos-nav {
-    height: 25px;
+    height: 35px;
     background: linear-gradient(to bottom, var(--cor-navbar), var(--cor-fundo));
 }
 
@@ -45,15 +46,26 @@ nav {
     align-items: center;
     list-style: none;
     gap: 40px;
-    padding: 20px 0;
     margin: 0;
+    padding: 20px 0;
+}
+
+#toggle-theme {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
 }
 
 .menu a {
     font-family: "Cal sans", serif;
     font-weight: 500;
     text-decoration: none;
-    color: #000000; 
+    color: var(--cor-texto);
     transition: color 0.3s, text-shadow 0.3s;
     text-shadow: 0 0 3px rgba(255, 255, 255, 0.3); 
 }
