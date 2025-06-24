@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Geologica:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Geologica:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --cor-fundo: #DAE3E5;
@@ -24,6 +24,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
+  transition: all 0.4s ease;
 }
 
 nav {
@@ -49,9 +50,10 @@ nav {
 }
 
 .menu a {
+    font-family: "Cal sans", serif;
+    font-weight: 500;
     text-decoration: none;
     color: #000000; 
-    font-weight: bold;
     transition: color 0.3s, text-shadow 0.3s;
     text-shadow: 0 0 3px rgba(255, 255, 255, 0.3); 
 }
@@ -68,48 +70,119 @@ nav {
 }
 
 .tituloCartilha {
-    font-family: "Cal sans", "Serif";
-    font-weight: 400;
+  font-size: 4.5rem;      /* bem grandão */
+  font-weight: 900;     /* peso pesado pra chamar atenção */
+  font-family: 'Geologica', sans-serif; /* combina com o texto */
+  margin-bottom: 5px;
+  animation: slideDownTitle 1.2s ease forwards;
+}
+
+@keyframes slideDownTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .subtituloCartilha {
-    font-family: "Cal sans", "Serif";
-    font-weight: 100;
+    font-family: "Geologica", "Sans-serif";
+    font-size: 22px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 250px;
+    animation: slideDownTitle 0.8s ease forwards;
+    animation-delay: 0.3s; /* começa um tiquinho depois do título */
+    opacity: 0; /* pra garantir que comece invisível */
 }
 
 .tituloPrincipal {
     text-align: center;
-    padding: 60px 20px 30px;
+    padding: 2px 20px 30px;
     background: none;
 }
 
 .tituloArticle {
-    font-family: "Cal sans", "Serif";
+    font-family: "Raleway", "Sans-serif";
+    font-weight: 800;
 }
 
 main {
     max-width: 900px;
     margin: auto;
-    padding: 20px;
-}
-
-.cartilha article {
-    margin-bottom: 40px;
+    padding: 10px;
 }
 
 .cartilha h2 {
     color: var(--cor-destaque);
     border-bottom: 2px solid var(--cor-destaque-2);
     padding-bottom: 5px;
+    font-size: 3.5rem; 
+    font-weight: 900; 
 }
 
-.cartilha ul {
-    padding-left: 20px;
+.cartilha p {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
 .cartilha li {
     margin-bottom: 8px;
+    padding-left: 15px; /* opcional: espaço pra texto não colar na borda */
+    position: relative;
+    
 }
+
+.cartilha article {
+  margin-bottom: 60px;
+}
+
+/* Layout lado a lado apenas pra artigos que NÃO têm lista */
+.cartilha article:not(:has(ul)) {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Título da esquerda */
+.cartilha article:not(:has(ul)) h2 {
+  font-size: 1.8rem;
+  color: var(--cor-destaque);
+  border: none;
+  flex: 1;
+  margin: 0;
+}
+
+/* Texto da direita */
+.cartilha article:not(:has(ul)) p {
+  flex: 2;
+  margin: 0 0 10px 0;
+}
+
+/* Já tem, mas vamos garantir que lista continue no formato vertical */
+.cartilha ul {
+  padding-left: 20px;
+  margin-top: 10px;
+  list-style: none;
+  padding-left: 0; /* tira o espaçamento padrão da lista */
+  margin-top: 10px;
+
+}
+
+
+.cartilha article:has(ul) h2 {
+  color: var(--cor-destaque);
+  border-bottom: 2px solid var(--cor-destaque-2);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
 
 footer {
     font-family: "Roboto Condensed", "Serif";
@@ -123,12 +196,6 @@ footer {
     box-sizing: border-box;
 }
 
-
-body {
-    transition: all 0.4s ease;
-}
-
-
 .item_padrao, .item_ativo {
     opacity: 0;
     transform: translateY(-20px);
@@ -136,19 +203,17 @@ body {
     transition: font-size 0.4s ease, text-shadow 0.4s ease;
 }
 
+.item_padrao {
+    margin-top: 3px;
+    font-size: 32px;
+}
+
+
+
 .item_ativo {
   margin-top: 8px;
 }
 
-.item_padrao {
-  margin-top: 3px;
-}
-
-
-.menu a {
-    font-family: "Cal sans", serif;
-    font-weight: 500;
-}
 .menu li.item_ativo {
     animation-delay: 0.3s;
 }
@@ -170,53 +235,49 @@ body {
     }
 }
 
-.item_padrao {
-    transition: font-size 0.4s ease;
-    font-size: 32px;
-}
-
 .item_ativo {
     font-size: 50px;
     text-shadow: 0 0 6px black;
 }
 
-  .article {
+.contatoA {
     font-family: "Poetsen One", sans-serif;
     margin: 40px;
   }
 
-  .container {
+.container {
     display: flex;
     justify-content: space-between;
     max-width: 900px;
     margin: auto;
   }
 
-  .info, .form {
+.info, .form {
     width: 45%;
   }
 
-  .info h3, .form h3 {
-    font-weight: "Poetsen One";
-  }
+.info h3, .form h3 {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: normal; /* ou o que quiser */
+}
 
-  .info p {
+.info p {
     margin: 5px 0;
   }
 
-  .social-icons a {
+.social-icons a {
     margin-right: 10px;
     text-decoration: none;
     font-size: 20px;
   }
 
-  .form input, .form textarea {
+.form input, .form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     box-sizing: border-box;
   }
 
-  .form button {
+.form button {
     padding: 10px 20px;
   }
