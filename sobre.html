@@ -9,26 +9,29 @@
 <body>
     <header>
         <nav>
+            <div class="botoes-acessibilidade">
+                <button id="increase-font" aria-label="Aumentar fonte">
+                    <img id="icone-aumentar" src="./img/A+proLight.svg" width="20" />
+                </button>
+                <button id="decrease-font" aria-label="Diminuir fonte">
+                    <img id="icone-diminuir" src="./img/A-proLight.svg" width="20" />
+                </button>
+            </div>
+
             <ul class="menu">
-                <li class="item_padrao"><a href="index.html">Início</a> </li>
+                <li class="item_padrao"><a href="index.html">Início</a></li>
                 <li class="item_ativo"><a href="sobre.html">Sobre</a></li>
-                <li class="item_padrao"><a href="contato.html">Contato</a> </li>
+                <li class="item_padrao"><a href="contato.html">Contato</a></li>
             </ul>
-            <button id="toggle-theme" aria-label="Alternar tema">
-                <img id="icone-tema" src="./img/darkMode.svg" alt="Ícone tema" width="30">
-            </button>
 
-            <button id="increase-font" aria-label="Aumentar fonte" class="btn-font">
-                <img src="./img/A+proLight.svg" alt="Aumentar fonte" width="20" />
-            </button>
-
-            <button id="decrease-font" aria-label="Diminuir fonte" class="btn-font">
-                <img src="./img/A-proLight.svg" alt="Diminuir fonte" width="20" />
-            </button>
+            <div class="botao-tema">
+                <button id="toggle-theme" aria-label="Alternar tema">
+                    <img id="icone-tema" src="./img/darkMode.svg" alt="Ícone tema" width="30" />
+                </button>
+            </div>
         </nav>
         <div class="degrade-apos-nav"></div>
     </header>
-
     <main>
         <section class="sobre">
             <h1>Sobre o projeto</h1>

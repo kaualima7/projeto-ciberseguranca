@@ -27,12 +27,8 @@ body {
     transition: all 0.4s ease;
 }
 
-nav {
-    position: relative;
-    background-color: var(--cor-navbar); 
-    top: 0;
-    z-index: 10;
-    padding: 0px 0;
+body {
+    font-size: 1em; 
 }
 
 .degrade-apos-nav {
@@ -40,25 +36,67 @@ nav {
     background: linear-gradient(to bottom, var(--cor-navbar), var(--cor-fundo));
 }
 
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 999; /* garantir que fique por cima */
+    background-color: var(--cor-navbar);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 20px;
+}
+
 .menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    list-style: none;
     gap: 40px;
+    list-style: none;
     margin: 0;
-    padding: 20px 0;
+    padding: 0;
+}
+
+
+.botoes-acessibilidade,
+.botao-tema {
+    display: flex;
+    gap: 10px;
+}
+
+.botoes-acessibilidade button,
+.botao-tema button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.botoes-acessibilidade img,
+.botao-tema img {
+    display: block;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 #toggle-theme {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
 }
 
 .menu a {
@@ -139,17 +177,17 @@ main {
 .cartilha p {
     font-family: 'Geologica', sans-serif;
     font-weight: 400;
-    font-size: 1.1rem;
     line-height: 1.5;
     margin-bottom: 10px;
 }
+
 
 .cartilha li {
     margin-bottom: 8px;
     padding-left: 15px; 
     position: relative;
-    
 }
+
 
 .cartilha article {
     margin-bottom: 60px;
