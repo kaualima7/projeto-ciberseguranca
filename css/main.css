@@ -19,24 +19,24 @@ body.dark {
 }
 
 body {
-  background: var(--cor-fundo);
-  color: var(--cor-texto);
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  transition: all 0.4s ease;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: all 0.4s ease;
 }
 
 nav {
-  background-color: var(--cor-navbar); 
-  top: 0;
-  z-index: 10;
-  padding: 5px 0;
+    background-color: var(--cor-navbar); 
+    top: 0;
+    z-index: 10;
+    padding: 5px 0;
 }
 
 .degrade-apos-nav {
-  height: 25px;
-  background: linear-gradient(to bottom, var(--cor-navbar), var(--cor-fundo));
+    height: 25px;
+    background: linear-gradient(to bottom, var(--cor-navbar), var(--cor-fundo));
 }
 
 .menu {
@@ -70,11 +70,11 @@ nav {
 }
 
 .tituloCartilha {
-  font-size: 4.5rem;      /* bem grandão */
-  font-weight: 900;     /* peso pesado pra chamar atenção */
-  font-family: 'Geologica', sans-serif; /* combina com o texto */
-  margin-bottom: 5px;
-  animation: slideDownTitle 1.2s ease forwards;
+    font-size: 4.5rem;  
+    font-weight: 900;     
+    font-family: 'Geologica', sans-serif; 
+    margin-bottom: 5px;
+    animation: slideDownTitle 1.2s ease forwards;
 }
 
 @keyframes slideDownTitle {
@@ -95,8 +95,8 @@ nav {
     margin-top: 10px;
     margin-bottom: 250px;
     animation: slideDownTitle 0.8s ease forwards;
-    animation-delay: 0.3s; /* começa um tiquinho depois do título */
-    opacity: 0; /* pra garantir que comece invisível */
+    animation-delay: 0.3s;
+    opacity: 0; 
 }
 
 .tituloPrincipal {
@@ -134,53 +134,53 @@ main {
 
 .cartilha li {
     margin-bottom: 8px;
-    padding-left: 15px; /* opcional: espaço pra texto não colar na borda */
+    padding-left: 15px; 
     position: relative;
     
 }
 
 .cartilha article {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
-/* Layout lado a lado apenas pra artigos que NÃO têm lista */
+
 .cartilha article:not(:has(ul)) {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
 }
 
-/* Título da esquerda */
+
 .cartilha article:not(:has(ul)) h2 {
-  font-size: 1.8rem;
-  color: var(--cor-destaque);
-  border: none;
-  flex: 1;
-  margin: 0;
+    font-size: 1.8rem;
+    color: var(--cor-destaque);
+    border: none;
+    flex: 1;
+    margin: 0;
 }
 
-/* Texto da direita */
+
 .cartilha article:not(:has(ul)) p {
-  flex: 2;
-  margin: 0 0 10px 0;
+    flex: 2;
+    margin: 0 0 10px 0;
 }
 
-/* Já tem, mas vamos garantir que lista continue no formato vertical */
+
 .cartilha ul {
-  padding-left: 20px;
-  margin-top: 10px;
-  list-style: none;
-  padding-left: 0; /* tira o espaçamento padrão da lista */
-  margin-top: 10px;
+    padding-left: 20px;
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0; 
+    margin-top: 10px;
 
 }
 
 
 .cartilha article:has(ul) h2 {
-  color: var(--cor-destaque);
-  border-bottom: 2px solid var(--cor-destaque-2);
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+    color: var(--cor-destaque);
+    border-bottom: 2px solid var(--cor-destaque-2);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 
@@ -211,7 +211,7 @@ footer {
 
 
 .item_ativo {
-  margin-top: 8px;
+    margin-top: 8px;
 }
 
 .menu li.item_ativo {
@@ -257,8 +257,8 @@ footer {
   }
 
 .info h3, .form h3 {
-  font-family: "Poetsen One", sans-serif;
-  font-weight: normal; /* ou o que quiser */
+    font-family: "Poetsen One", sans-serif;
+    font-weight: normal;
 }
 
 .info p {
