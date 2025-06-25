@@ -187,19 +187,6 @@ button {
   animation: slideDownImagem 0.8s ease forwards;
 }
 
-.imagemFundoSegurança {
-  position: absolute;
-  top: 1620px;    
-  left: 950px;     
-  width: 250px;
-  height: auto;
-  pointer-events: none;
-  z-index: 0;
-  transition: filter 0.3s ease, opacity 0.8s ease;
-  transform: rotate(-10deg);
-  animation: slideDownImagem 0.8s ease forwards;
-}
-
 .tituloCartilha,
 .subtituloCartilha {
   position: relative;
