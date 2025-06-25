@@ -2,29 +2,32 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Script carregado');
 
   const botaoTema = document.getElementById('toggle-theme');
-  const icone = document.getElementById('icone-tema');
+  const iconeTema = document.getElementById('icone-tema');
   const aumentarBtn = document.getElementById('increase-font');
   const diminuirBtn = document.getElementById('decrease-font');
+  const imgFundo = document.querySelector('.imagemFundoDecorativa');
 
-  // Tema claro/escuro
-  if (botaoTema && icone) {
+  function atualizarImagemModo() {
+    if (document.body.classList.contains('dark')) {
+      imgFundo.src = './img/imgCiberdark.png';
+      iconeTema.src = './img/lightMode.svg';
+      document.querySelector('#increase-font img').src = './img/A+prodark.svg';
+      document.querySelector('#decrease-font img').src = './img/A-prodark.svg';
+    } else {
+      imgFundo.src = './img/imgCiberlight.png';
+      iconeTema.src = './img/darkMode.svg';
+      document.querySelector('#increase-font img').src = './img/A+proLight.svg';
+      document.querySelector('#decrease-font img').src = './img/A-proLight.svg';
+    }
+  }
+
+  if (botaoTema) {
     botaoTema.addEventListener('click', () => {
       document.body.classList.toggle('dark');
-      const isDark = document.body.classList.contains('dark');
-
-      icone.src = isDark ? './img/lightMode.svg' : './img/darkMode.svg';
-
-      const iconeAumentar = document.querySelector('#increase-font img');
-      const iconeDiminuir = document.querySelector('#decrease-font img');
-
-      if (iconeAumentar && iconeDiminuir) {
-        iconeAumentar.src = isDark ? './img/A+prodark.svg' : './img/A+proLight.svg';
-        iconeDiminuir.src = isDark ? './img/A-prodark.svg' : './img/A-proLight.svg';
-      }
+      atualizarImagemModo();
     });
   }
 
-  // Aumentar e diminuir a fonte
   if (aumentarBtn && diminuirBtn) {
     aumentarBtn.addEventListener('click', () => {
       document.body.style.fontSize = '1.2em';
@@ -35,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mensagem no formulário (se existir)
   const formContato = document.getElementById("contato-form");
   if (formContato) {
     formContato.addEventListener("submit", function(event) {
@@ -43,7 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Página em construção");
     });
   }
+  atualizarImagemModo();
 });
+
 
 
 
