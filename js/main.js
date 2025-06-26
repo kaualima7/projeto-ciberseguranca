@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const botaoTema = document.getElementById('toggle-theme');
   const iconeTema = document.getElementById('icone-tema');
-  const aumentarBtn = document.getElementById('increase-font');
-  const diminuirBtn = document.getElementById('decrease-font');
+  const aumentarBtn = document.getElementById('aumentarFonte');
+  const diminuirBtn = document.getElementById('diminuirFonte');
   const imgFundo = document.querySelector('.imagemFundoDecorativa');
 
   // verifica tema salvo
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ícones acessibilidade
-    document.querySelector('#increase-font img').src = modoEscuro ? './img/A+prodark.svg' : './img/A+proLight.svg';
-    document.querySelector('#decrease-font img').src = modoEscuro ? './img/A-prodark.svg' : './img/A-proLight.svg';
+    document.querySelector('#aumentarFonte img').src = modoEscuro ? './img/A+prodark.svg' : './img/A+proLight.svg';
+    document.querySelector('#diminuirFonte img').src = modoEscuro ? './img/A-prodark.svg' : './img/A-proLight.svg';
 
     // imagens decorativas dos artigos
     document.querySelectorAll('.imagemDecorativa').forEach(img => {
