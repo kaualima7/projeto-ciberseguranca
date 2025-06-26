@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cal+Sans&family=Geologica:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,806;1,806&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
+html {
+  font-size: 1em;
+  transition: font-size 0.3s ease-in-out;
+}
 
 :root {
   --cor-fundo: #DAE3E5;

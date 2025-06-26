@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const diminuirBtn = document.getElementById('decrease-font');
   const imgFundo = document.querySelector('.imagemFundoDecorativa');
 
-  // Verifica tema salvo
+  // verifica tema salvo
   const temaSalvo = localStorage.getItem('tema');
   if (temaSalvo === 'dark') {
     document.body.classList.add('dark');
   }
 
-  // Função de troca visual de tema
+  // função de troca visual de tema
   function atualizarImagemModo() {
     const modoEscuro = document.body.classList.contains('dark');
 
@@ -39,12 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modoEscuro && srcEscuro) {
         img.src = srcEscuro;
       } else {
-        img.src = srcClaro.replace(' (1)', ''); // remove " (1)" se tiver
+        img.src = srcClaro.replace(' (1)', '');
       }
     });
   }
 
-  // Toggle de tema
+  // toggle de tema
   if (botaoTema) {
     botaoTema.addEventListener('click', () => {
       const modoEscuroAtivo = document.body.classList.toggle('dark');
@@ -53,18 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Botões de fonte
-  if (aumentarBtn && diminuirBtn) {
-    aumentarBtn.addEventListener('click', () => {
-      document.body.style.fontSize = '1.2em';
-    });
+  let tamanhoFonteAtual = 1;
 
-    diminuirBtn.addEventListener('click', () => {
-      document.body.style.fontSize = '1em';
-    });
+    if (aumentarBtn && diminuirBtn) {
+  aumentarBtn.addEventListener('click', () => {
+    tamanhoFonteAtual += 0.1;
+    document.documentElement.style.fontSize = `${tamanhoFonteAtual}em`;
+  });
+
+  diminuirBtn.addEventListener('click', () => {
+    tamanhoFonteAtual = Math.max(0.8, tamanhoFonteAtual - 0.1); 
+    document.documentElement.style.fontSize = `${tamanhoFonteAtual}em`;
+  });
   }
 
-  // Validação do formulário (modo zoeira)
   const formContato = document.getElementById("contato-form");
   if (formContato) {
     formContato.addEventListener("submit", function(event) {
@@ -73,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Executa na primeira carga
   atualizarImagemModo();
 });
 
