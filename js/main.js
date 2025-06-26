@@ -1,73 +1,88 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
   console.log('Script carregado');
 
-  const botaoTema = document.getElementById('toggle-theme');
-  const iconeTema = document.getElementById('icone-tema');
-  const aumentarBtn = document.getElementById('aumentarFonte');
-  const diminuirBtn = document.getElementById('diminuirFonte');
-  const imgFundo = document.querySelector('.imagemFundoDecorativa');
+  var botaoTema = document.getElementById('toggle-theme');
+  var iconeTema = document.getElementById('icone-tema');
+  var aumentarBtn = document.getElementById('aumentarFonte');
+  var diminuirBtn = document.getElementById('diminuirFonte');
+  var imgFundo = document.querySelector('.imagemFundoDecorativa');
 
-  // verifica tema salvo
-  const temaSalvo = localStorage.getItem('tema');
+  // pega o tema que salvou no navegador
+  var temaSalvo = localStorage.getItem('tema');
   if (temaSalvo === 'dark') {
     document.body.classList.add('dark');
   }
 
-  // função de troca visual de tema
   function atualizarImagemModo() {
-    const modoEscuro = document.body.classList.contains('dark');
+    var modoEscuro = document.body.classList.contains('dark');
 
-    // imagem de fundo principal
+    // troca a imagem de fundo principal
     if (imgFundo) {
-      imgFundo.src = modoEscuro ? './img/imgCiberdark.png' : './img/imgCiberlight.png';
+      if (modoEscuro) {
+        imgFundo.src = './img/imgCiberdark.png';
+      } else {
+        imgFundo.src = './img/imgCiberlight.png';
+      }
     }
 
-    // ícone do botão de tema
+    // troca o ícone do botão de tema
     if (iconeTema) {
-      iconeTema.src = modoEscuro ? './img/lightMode.svg' : './img/darkMode.svg';
+      if (modoEscuro) {
+        iconeTema.src = './img/lightMode.svg';
+      } else {
+        iconeTema.src = './img/darkMode.svg';
+      }
     }
 
-    // ícones acessibilidade
-    document.querySelector('#aumentarFonte img').src = modoEscuro ? './img/A+prodark.svg' : './img/A+proLight.svg';
-    document.querySelector('#diminuirFonte img').src = modoEscuro ? './img/A-prodark.svg' : './img/A-proLight.svg';
+    // troca os ícones de aumentar e diminuir fonte
+    var iconeAumentar = document.querySelector('#aumentarFonte img');
+    var iconeDiminuir = document.querySelector('#diminuirFonte img');
+    if (modoEscuro) {
+      if (iconeAumentar) iconeAumentar.src = './img/A+prodark.svg';
+      if (iconeDiminuir) iconeDiminuir.src = './img/A-prodark.svg';
+    } else {
+      if (iconeAumentar) iconeAumentar.src = './img/A+proLight.svg';
+      if (iconeDiminuir) iconeDiminuir.src = './img/A-proLight.svg';
+    }
 
-    // imagens decorativas dos artigos
-    document.querySelectorAll('.imagemDecorativa').forEach(img => {
-      const srcClaro = img.getAttribute('src');
-      const srcEscuro = img.getAttribute('data-dark');
+    // troca as imagens decorativas dos artigos
+    var imagens = document.querySelectorAll('.imagemDecorativa');
+    for (var i = 0; i < imagens.length; i++) {
+      var img = imagens[i];
+      var srcClaro = img.getAttribute('src');
+      var srcEscuro = img.getAttribute('data-dark');
 
       if (modoEscuro && srcEscuro) {
         img.src = srcEscuro;
       } else {
         img.src = srcClaro.replace(' (1)', '');
       }
-    });
+    }
   }
 
-  // toggle de tema
   if (botaoTema) {
-    botaoTema.addEventListener('click', () => {
-      const modoEscuroAtivo = document.body.classList.toggle('dark');
+    botaoTema.addEventListener('click', function() {
+      var modoEscuroAtivo = document.body.classList.toggle('dark');
       localStorage.setItem('tema', modoEscuroAtivo ? 'dark' : 'light');
       atualizarImagemModo();
     });
   }
 
-  let tamanhoFonteAtual = 1;
+  var tamanhoFonteAtual = 1;
 
-    if (aumentarBtn && diminuirBtn) {
-  aumentarBtn.addEventListener('click', () => {
-    tamanhoFonteAtual += 0.1;
-    document.documentElement.style.fontSize = `${tamanhoFonteAtual}em`;
-  });
+  if (aumentarBtn && diminuirBtn) {
+    aumentarBtn.addEventListener('click', function() {
+      tamanhoFonteAtual += 0.1;
+      document.documentElement.style.fontSize = tamanhoFonteAtual + 'em';
+    });
 
-  diminuirBtn.addEventListener('click', () => {
-    tamanhoFonteAtual = Math.max(0.8, tamanhoFonteAtual - 0.1); 
-    document.documentElement.style.fontSize = `${tamanhoFonteAtual}em`;
-  });
+    diminuirBtn.addEventListener('click', function() {
+      tamanhoFonteAtual = Math.max(0.8, tamanhoFonteAtual - 0.1);
+      document.documentElement.style.fontSize = tamanhoFonteAtual + 'em';
+    });
   }
 
-  const formContato = document.getElementById("contato-form");
+  var formContato = document.getElementById("contato-form");
   if (formContato) {
     formContato.addEventListener("submit", function(event) {
       event.preventDefault();

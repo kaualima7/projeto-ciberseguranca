@@ -224,7 +224,7 @@ main {
 
 .cartilha p {
   font-family: 'Geologica', sans-serif;
-  font-weight: 400; /* mantém igual ao artigo 1 */
+  font-weight: 400; 
   font-size: 1.45rem;
   line-height: 1.8;
   margin-bottom: 10px;
@@ -454,17 +454,6 @@ outline: none;
   font-size: 1rem;
   margin-top: 40px;
   color: var(--cor-destaque-2);
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .info, .form {
-    width: 100%;
-  }
 }
 
 .titulo-sobre {
