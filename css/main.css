@@ -301,12 +301,12 @@ main {
   z-index: 0;
 }
 
-.imagemDecorativa.left {
+.imagemDecorativa.esquerda {
   left: -60px;
   top: 30px;
 }
 
-.imagemDecorativa.right {
+.imagemDecorativa.direita {
   right: -60px;
   top: 30px;
 }
